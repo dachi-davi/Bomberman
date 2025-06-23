@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="406.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bomberman.StartScreen">
+   <children>
+      <Button fx:id="leaderBoard" layoutX="268.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToLeaderboards" prefHeight="46.0" prefWidth="122.0" text="Leaderboard" />
+      <Button fx:id="options" layoutX="268.0" layoutY="240.0" mnemonicParsing="false" onAction="#switchToOptions" prefHeight="46.0" prefWidth="122.0" text="Options" />
+      <Button fx:id="start" layoutX="268.0" layoutY="97.0" mnemonicParsing="false" onAction="#switchToLevelSelect" prefHeight="46.0" prefWidth="122.0" text="Start" />
+   </children>
+</AnchorPane>

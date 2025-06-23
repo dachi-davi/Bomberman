@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.example.bomberman.BreakableWall?>
+<?import com.example.bomberman.Enemy2Hunter?>
+<?import com.example.bomberman.Enemy3Ghost?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane fx:id="root" prefHeight="676.0" prefWidth="884.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bomberman.Level2">
+    <children>
+        <Group fx:id="wallGroup">
+            <children>
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="676.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="676.0" layoutX="832.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" stroke="BLACK" strokeType="INSIDE" width="884.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="104.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="208.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="104.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="104.0" layoutY="312.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="104.0" layoutY="416.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="208.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="208.0" layoutY="312.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="208.0" layoutY="416.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="312.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="416.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="312.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="312.0" layoutY="312.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="312.0" layoutY="416.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="416.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="416.0" layoutY="416.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="520.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="624.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="520.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="520.0" layoutY="312.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="520.0" layoutY="416.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="624.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="624.0" layoutY="312.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="624.0" layoutY="416.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutY="624.0" stroke="BLACK" strokeType="INSIDE" width="884.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutY="-52.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="364.0" y="156.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="52.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" y="260.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="104.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="468.0" y="52.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="104.0" layoutY="-156.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="364.0" y="364.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="104.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="468.0" y="260.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="52.0" layoutY="-104.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="468.0" y="468.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="208.0" layoutY="-52.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" y="468.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" y="260.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="104.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" y="260.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="52.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" y="260.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="-52.0" layoutY="-156.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="520.0" y="260.0" />
+                <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="-156.0" layoutY="-52.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="520.0" y="260.0" />
+            <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="728.0" layoutY="312.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+            <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="728.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+            <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="728.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+            <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="728.0" layoutY="416.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+            <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="728.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+            <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="624.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+            <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="520.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+            <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="416.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+            <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="312.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+            <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="208.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+            <Rectangle arcHeight="5.0" fill="#6595a1" height="52.0" layoutX="104.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+            <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="52.0" layoutY="-208.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="468.0" y="468.0" />
+            <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="208.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" />
+            <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="-52.0" layoutY="260.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" />
+            <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="104.0" layoutY="520.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" />
+            <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="-52.0" layoutY="364.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" />
+            <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="364.0" layoutY="260.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" />
+            <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="364.0" layoutY="364.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="260.0" />
+            <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="-312.0" layoutY="-312.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="468.0" y="468.0" />
+            <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="-312.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="468.0" y="468.0" />
+            <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="208.0" layoutY="-312.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="468.0" y="468.0" />
+            <BreakableWall arcHeight="5.0" fill="#488e78" height="52.0" layoutX="208.0" stroke="BLACK" strokeType="INSIDE" width="52.0" x="468.0" y="468.0" />
+            <Button fx:id="levelSelectButton" layoutX="793.0" layoutY="13.0" mnemonicParsing="false" onAction="#switchToLevelSelect" text="Level Select" />
+            </children>
+        </Group>
+      <Group fx:id="enemyGroup">
+         <children>
+            <Enemy2Hunter fx:id="enemy2_1" centerX="234.0" centerY="182.0" />
+            <Enemy2Hunter fx:id="enemy2_3" centerX="650.0" centerY="494.0" />
+            <Enemy2Hunter fx:id="enemy2_2" centerX="650.0" centerY="182.0" />
+            <Enemy2Hunter fx:id="enemy2_4" centerX="234.0" centerY="494.0" />
+            <Enemy3Ghost fx:id="enemy3_1" centerX="78.0" centerY="338.0" />
+            <Enemy3Ghost fx:id="enemy3_2" centerX="442.0" centerY="78.0" />
+            <Enemy3Ghost fx:id="enemy3_4" centerX="442.0" centerY="598.0" />
+            <Enemy3Ghost fx:id="enemy3_3" centerX="806.0" centerY="338.0" />
+         </children>
+      </Group>
+        <Label fx:id="score" layoutX="14.0" layoutY="17.0" prefHeight="17.0" prefWidth="65.0" text="Score : " />
+    </children>
+</AnchorPane>
