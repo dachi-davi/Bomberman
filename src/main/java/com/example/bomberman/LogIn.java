@@ -81,5 +81,6 @@ public class LogIn {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+        SoundManager.playTitleScreenTheme();
     }
 }

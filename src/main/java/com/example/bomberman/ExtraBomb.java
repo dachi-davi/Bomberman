@@ -16,6 +16,7 @@ public class ExtraBomb extends Circle {
 
         timeline = new Timeline(new KeyFrame(Duration.millis(16), e->{
            if (pickedUp()){
+               SoundManager.playItemGet();
                Bomb.bombMax++;
                ((Pane) getParent()).getChildren().remove(this);
                timeline.stop();

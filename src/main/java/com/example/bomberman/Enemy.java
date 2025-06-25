@@ -184,7 +184,7 @@ public class Enemy extends Circle {
     public void enemyIntersectsPlayer(){
         if (!playerKilled)
             if (getBoundsInParent().intersects(player.getBoundsInParent())){
-                if (player.getScene()!=null){
+                if (player.getScene()!=null && !player.isInvincible()){
                     stopEnemies();
                     System.out.println("enemy killed player");
                     playerKilled = true;
@@ -197,7 +197,6 @@ public class Enemy extends Circle {
         for (Node node : ((Group)getParent()).getChildren()){
             if (node instanceof Enemy) if (((Enemy) node).timeline!=null){
                 ((Enemy) node).timeline.stop();
-                System.out.println("yay");
             }
         }
     }

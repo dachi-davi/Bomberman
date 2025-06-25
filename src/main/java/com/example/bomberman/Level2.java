@@ -47,10 +47,11 @@ public class Level2 implements Initializable {
 
     Timeline essentials;
     Player player;
-
+    Set<KeyCode> pressedKeys;
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        SoundManager.playMainTheme();
         Platform.runLater(() -> root.requestFocus());
-        Set<KeyCode> pressedKeys = new HashSet<>();
+        pressedKeys = new HashSet<>();
 
         essentials = new Timeline(new KeyFrame(Duration.seconds(0.2), e -> {
             score.setText("Score: " + ScoreManager.getScore());
@@ -104,6 +105,7 @@ public class Level2 implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("VictoryScreen.fxml"));
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) enemyGroup.getScene().getWindow();
+                pressedKeys.clear();
                 if (stage!=null){
                     stage.setScene(scene);
                     stage.show();
@@ -125,6 +127,7 @@ public class Level2 implements Initializable {
     @FXML
     private void switchToLevelSelect(ActionEvent e) throws IOException {
         stopEnemies();
+        SoundManager.playTitleScreenTheme();
         Parent root = FXMLLoader.load(getClass().getResource("LevelSelect.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();

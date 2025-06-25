@@ -41,9 +41,10 @@ public class Bomb extends Circle {
         centerX = getCenterX();
         centerY = getCenterY();
         setImageBomb();
+        SoundManager.playPlaceBomb();
         countdown = new Timeline(new KeyFrame(Duration.seconds(3), e -> {
             explode();
-            secondExplosion = new Timeline(new KeyFrame(Duration.seconds(0.15), ex -> explode()));
+            secondExplosion = new Timeline(new KeyFrame(Duration.seconds(0.25), ex -> explode()));
             secondExplosion.play();
         }));
         countdown.play();
@@ -58,6 +59,7 @@ public class Bomb extends Circle {
             bombAmount--;
         }
         if (explosionAmount == 0){
+            SoundManager.playBombExplodes();
             setImageExplosion();
             explosionAmount++;
         }else pane.getChildren().remove(explosionImage);
@@ -72,12 +74,6 @@ public class Bomb extends Circle {
         while (!killedEnemies.isEmpty()) killedEnemies.removeLast().enemyKilled();
 
         if (isInBlastRange(player.getCenterX(), player.getCenterY())) {
-            for (Node nodeGroup : ((Pane) player.getParent()).getChildren())
-                if (nodeGroup instanceof Group)
-                    for (Node node : ((Group) nodeGroup).getChildren())
-                        if (node instanceof Enemy)
-                            if (((Enemy) node).timeline != null) ((Enemy) node).timeline.stop();
-
             player.playerKilled();
         }
 
@@ -105,7 +101,7 @@ public class Bomb extends Circle {
             Bomb tempBomb = bombsToExplode.removeLast();
             tempBomb.countdown.stop();
             tempBomb.explode();
-            secondExplosion = new Timeline(new KeyFrame(Duration.seconds(0.1), e -> tempBomb.explode()));
+            secondExplosion = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> tempBomb.explode()));
             secondExplosion.play();
         }
     }
@@ -139,5 +135,9 @@ public class Bomb extends Circle {
 
     public Timeline getCountdown() {
         return countdown;
+    }
+
+    public ImageView getBombImage() {
+        return bombImage;
     }
 }

@@ -9,26 +9,68 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bomberman.LeaderBoard">
-   <children>
-      <Label alignment="CENTER" layoutX="204.0" layoutY="14.0" prefHeight="74.0" prefWidth="190.0" text="LeaderBoards">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <Button fx:id="back" layoutX="280.0" layoutY="346.0" mnemonicParsing="false" onAction="#switchToStartScreen" text="back" />
-      <TabPane fx:id="tabPane" layoutX="97.0" layoutY="72.0" prefHeight="26.0" prefWidth="431.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="125.0">
-        <tabs>
-          <Tab text="Level 1" />
-          <Tab text="Level 2" />
-            <Tab text="Level 3" />
-        </tabs>
-      </TabPane>
-      <TableView fx:id="tableView" layoutX="98.0" layoutY="99.0" prefHeight="239.0" prefWidth="431.0">
-        <columns>
-          <TableColumn fx:id="usernameCol" prefWidth="266.4000244140625" text="Username" />
-          <TableColumn fx:id="scoreCol" minWidth="0.0" prefWidth="165.5999755859375" text="Score" />
-        </columns>
-      </TableView>
-   </children>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<?import javafx.scene.control.Button?>-->
+<!--<?import javafx.scene.control.Label?>-->
+<!--<?import javafx.scene.control.Tab?>-->
+<!--<?import javafx.scene.control.TabPane?>-->
+<!--<?import javafx.scene.control.TableColumn?>-->
+<!--<?import javafx.scene.control.TableView?>-->
+<!--<?import javafx.scene.layout.AnchorPane?>-->
+<!--<?import javafx.scene.text.Font?>-->
+<!--<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bomberman.LeaderBoard">-->
+<!--   <children>-->
+<!--      <Label alignment="CENTER" layoutX="204.0" layoutY="14.0" prefHeight="74.0" prefWidth="190.0" text="LeaderBoards">-->
+<!--         <font>-->
+<!--            <Font size="30.0" />-->
+<!--         </font>-->
+<!--      </Label>-->
+<!--      <Button fx:id="back" layoutX="280.0" layoutY="346.0" mnemonicParsing="false" onAction="#switchToStartScreen" text="back" />-->
+<!--      <TabPane fx:id="tabPane" layoutX="97.0" layoutY="72.0" prefHeight="26.0" prefWidth="431.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="125.0">-->
+<!--        <tabs>-->
+<!--          <Tab text="Level 1" />-->
+<!--          <Tab text="Level 2" />-->
+<!--            <Tab text="Level 3" />-->
+<!--        </tabs>-->
+<!--      </TabPane>-->
+<!--      <TableView fx:id="tableView" layoutX="98.0" layoutY="99.0" prefHeight="239.0" prefWidth="431.0">-->
+<!--        <columns>-->
+<!--          <TableColumn fx:id="usernameCol" prefWidth="266.4000244140625" text="Username" />-->
+<!--          <TableColumn fx:id="scoreCol" minWidth="0.0" prefWidth="165.5999755859375" text="Score" />-->
+<!--        </columns>-->
+<!--      </TableView>-->
+<!--   </children>-->
+<!--</AnchorPane>-->
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f2f2f2;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bomberman.LeaderBoard">
+    <children>
+
+        <!-- Title -->
+        <Label alignment="CENTER" layoutX="200.0" layoutY="20.0" prefHeight="44.0" prefWidth="200.0" text="Leaderboards">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Label>
+
+        <!-- Tabs -->
+        <TabPane fx:id="tabPane" layoutX="87.0" layoutY="76.0" prefHeight="30.0" prefWidth="427.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="125.0">
+            <tabs>
+                <Tab text="Level 1" />
+                <Tab text="Level 2" />
+                <Tab text="Level 3" />
+            </tabs>
+        </TabPane>
+
+        <!-- Score Table -->
+        <TableView fx:id="tableView" layoutX="87.0" layoutY="105.0" prefHeight="220.0" prefWidth="427.0">
+            <columns>
+                <TableColumn fx:id="usernameCol" prefWidth="250.0" text="Username" />
+                <TableColumn fx:id="scoreCol" prefWidth="150.0" text="Score" />
+            </columns>
+        </TableView>
+
+        <!-- Back Button -->
+        <Button fx:id="back" layoutX="239.0" layoutY="340.0" mnemonicParsing="false" onAction="#switchToStartScreen" prefHeight="46.0" prefWidth="122.0" style="-fx-background-color: #4285f4; -fx-text-fill: white;" text="Back" />
+
+    </children>
 </AnchorPane>

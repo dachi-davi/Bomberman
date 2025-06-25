@@ -19,14 +19,24 @@ public class SpeedBoost extends Circle {
 
         timeline = new Timeline(new KeyFrame(Duration.millis(16), e->{
             if (pickedUp()){
+                SoundManager.playItemGet();
+                if (!player.isInvincible())
+                    SoundManager.playPowerUpTheme();
                 if (powerDown!=null)
                     powerDown.stop();
                 player.setSpeed(2.4);
+                player.setImageSpeed();
                 ((Pane) getParent()).getChildren().remove(this);
                 timeline.stop();
 
                 powerDown = new Timeline(new KeyFrame(Duration.seconds(10), ev -> {
-                    player.setSpeed(1.2);
+                    player.setSpeed(1);
+                    if (!player.isInvincible()){
+                        player.setImageNormal();
+                        if (!SoundManager.isPlayingTitleScreenTheme())
+                            SoundManager.playMainTheme();
+                    }
+
                 }));
                 powerDown.play();
 

@@ -5,6 +5,7 @@ import javafx.animation.Timeline;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
@@ -19,6 +20,7 @@ public class Enemy4BombEater extends Enemy {
 
     public Enemy4BombEater() {
         setRadius(25);
+        setOpacity(0);
     }
 
     public void move() {
@@ -74,8 +76,11 @@ public class Enemy4BombEater extends Enemy {
 
     @Override
     public void enemyKilled() {
-        ScoreManager.addScore(250);
-        if (timeline != null) timeline.stop();
+        if (timeline != null) {
+            timeline.stop();
+            SoundManager.playEnemyDies();
+            ScoreManager.addScore(250);
+        }
         ((Group) getParent()).getChildren().remove(image);
         ((Group) getParent()).getChildren().remove(this);
     }
@@ -144,9 +149,11 @@ public class Enemy4BombEater extends Enemy {
         if (getParent() == null)return;
         Pane pane = (Pane) ((Group) getParent()).getParent();
         ArrayList<Bomb> bombsToRemove = new ArrayList<>();
+        ArrayList<ImageView> bombsToRemoveI = new ArrayList<>();
         for (Node node : pane.getChildren()) {
             if (node instanceof Bomb && getBoundsInParent().intersects(node.getBoundsInParent())) {
                 bombsToRemove.add((Bomb) node);
+                bombsToRemoveI.add(((Bomb) node).getBombImage());
                 Bomb.bombAmount--;
                 break;
             }
@@ -154,6 +161,10 @@ public class Enemy4BombEater extends Enemy {
         while (!bombsToRemove.isEmpty()) {
             bombsToRemove.getLast().getCountdown().stop();
             pane.getChildren().remove(bombsToRemove.removeLast());
+            SoundManager.playBombEat();
+        }
+        while (!bombsToRemoveI.isEmpty()) {
+            pane.getChildren().remove(bombsToRemoveI.removeLast());
         }
     }
 

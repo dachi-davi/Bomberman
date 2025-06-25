@@ -20,6 +20,7 @@ public class Enemy3Ghost extends Enemy{
     public Enemy3Ghost() {
         setRadius(25);
         setFill(Color.LIGHTBLUE);
+        setOpacity(0);
     }
 
     public void move() {
@@ -152,8 +153,11 @@ public class Enemy3Ghost extends Enemy{
 
     @Override
     public void enemyKilled() {
-        ScoreManager.addScore(150);
-        if (timeline != null) timeline.stop();
+        if (timeline != null) {
+            timeline.stop();
+            SoundManager.playEnemyDies();
+            ScoreManager.addScore(150);
+        }
         ((Group) getParent()).getChildren().remove(image);
         ((Group) getParent()).getChildren().remove(this);
     }

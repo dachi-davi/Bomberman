@@ -26,6 +26,8 @@ public class VictoryScreen implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        SoundManager.getThemePlayer().stop();
+        SoundManager.playStageClear();
         scoreLabel.setText("Your Score Was: " + ScoreManager.getScore());
         try {
             Statement statement = HelloApplication.connection.createStatement();
@@ -52,6 +54,7 @@ public class VictoryScreen implements Initializable {
                     stage.setScene(scene);
                     stage.show();
                 }
+                SoundManager.playTitleScreenTheme();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

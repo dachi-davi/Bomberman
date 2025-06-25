@@ -80,10 +80,10 @@
         </Group>
       <Group fx:id="enemyGroup">
          <children>
-            <Enemy2Hunter fx:id="enemy2_1" centerX="234.0" centerY="182.0" />
-            <Enemy2Hunter fx:id="enemy2_3" centerX="650.0" centerY="494.0" />
-            <Enemy2Hunter fx:id="enemy2_2" centerX="650.0" centerY="182.0" />
-            <Enemy2Hunter fx:id="enemy2_4" centerX="234.0" centerY="494.0" />
+            <Enemy2Hunter fx:id="enemy2_1" centerX="130.0" centerY="182.0" />
+            <Enemy2Hunter fx:id="enemy2_3" centerX="754.0" centerY="494.0" />
+            <Enemy2Hunter fx:id="enemy2_2" centerX="754.0" centerY="182.0" />
+            <Enemy2Hunter fx:id="enemy2_4" centerX="130.0" centerY="494.0" />
             <Enemy3Ghost fx:id="enemy3_1" centerX="78.0" centerY="338.0" />
             <Enemy3Ghost fx:id="enemy3_2" centerX="442.0" centerY="78.0" />
             <Enemy3Ghost fx:id="enemy3_4" centerX="442.0" centerY="598.0" />

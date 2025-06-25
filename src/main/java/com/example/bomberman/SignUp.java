@@ -60,6 +60,7 @@ public class SignUp {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+        SoundManager.playTitleScreenTheme();
     }
     @FXML
     private void switchToLogIn(ActionEvent e) throws IOException {

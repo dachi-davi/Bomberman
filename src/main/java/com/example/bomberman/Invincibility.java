@@ -18,14 +18,24 @@ public class Invincibility extends Circle {
         setFill(Color.DARKGOLDENROD);
         timeline = new Timeline(new KeyFrame(Duration.millis(16), e->{
             if (pickedUp()){
+                SoundManager.playItemGet();
+                if (player.getSpeed() == 1)
+                    SoundManager.playPowerUpTheme();
                 if (powerDown!=null)
                     powerDown.stop();
                 player.setInvincible(true);
+                player.setImageInvincible();
                 ((Pane) getParent()).getChildren().remove(this);
                 timeline.stop();
 
                 powerDown = new Timeline(new KeyFrame(Duration.seconds(10), ev -> {
                     player.setInvincible(false);
+                    if (player.getSpeed() == 1){
+                        player.setImageNormal();
+                        if (!SoundManager.isPlayingTitleScreenTheme())
+                            SoundManager.playMainTheme();
+                    }
+
                 }));
                 powerDown.play();
             }

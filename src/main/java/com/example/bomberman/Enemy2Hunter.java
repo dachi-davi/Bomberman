@@ -17,7 +17,7 @@ public class Enemy2Hunter extends Enemy{
 
     public Enemy2Hunter() {
         setRadius(25);
-        setFill(Color.DARKMAGENTA);
+        setOpacity(0);
     }
 
     public void move() {
@@ -84,8 +84,11 @@ public class Enemy2Hunter extends Enemy{
 
     @Override
     public void enemyKilled() {
-        ScoreManager.addScore(200);
-        if (timeline != null) timeline.stop();
+        if (timeline != null) {
+            timeline.stop();
+            SoundManager.playEnemyDies();
+            ScoreManager.addScore(200);
+        }
         ((Group) getParent()).getChildren().remove(image);
         ((Group) getParent()).getChildren().remove(this);
     }

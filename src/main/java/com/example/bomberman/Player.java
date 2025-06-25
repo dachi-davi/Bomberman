@@ -6,7 +6,10 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -18,6 +21,8 @@ public class Player extends Circle {
     private Group wallGroup;
     private boolean invincible;
     private double speed = 1;
+    private ImageView image = new ImageView();
+    private boolean playerKilled = false;
 
     public Player(Group wallGroup) {
         Bomb.bombMax = 1;
@@ -25,9 +30,16 @@ public class Player extends Circle {
         setRadius(22);
         setFill(Paint.valueOf("#bc7177"));
         Enemy.setPlayerKilled(false);
+        setOpacity(0);
+        setImage();
     }
 
     public void move(Set<KeyCode> pressedKeys) {
+        if (playerKilled)return;
+        if (pressedKeys.contains(KeyCode.UP) || pressedKeys.contains(KeyCode.DOWN) || pressedKeys.contains(KeyCode.LEFT) || pressedKeys.contains(KeyCode.RIGHT)){
+            SoundManager.playWalking();
+        }
+
         if (pressedKeys.contains(KeyCode.UP)) {
             setCenterY(getCenterY() - speed);
             if (intersectsWall()) setCenterY(getCenterY() + speed);
@@ -58,12 +70,16 @@ public class Player extends Circle {
     }
 
     public void playerKilled(){
+        if (playerKilled)return;
         if (!invincible){
-            this.getScene().getRoot().getChildrenUnmodifiable().forEach(node -> {
-                if (node instanceof Enemy enemy) {
-                    enemy.timeline.stop();
-                }
-            });
+            playerKilled = true;
+            for (Node nodeGroup : ((Pane)getParent()).getChildren()){
+                if (nodeGroup instanceof Group)
+                    for (Node node : ((Group) nodeGroup).getChildren())
+                        if (node instanceof Enemy)
+                            if (((Enemy) node).timeline != null) ((Enemy) node).timeline.stop();
+            }
+
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
                 Scene scene = new Scene(root);
@@ -85,6 +101,33 @@ public class Player extends Circle {
 
     public void setSpeed(double speed) {
         this.speed = speed;
+    }
+
+    public void setImage(){
+        image.setImage(new Image(getClass().getResource("/images/sans.png").toExternalForm()));
+        image.setFitHeight(48);
+        image.setFitWidth(48);
+        image.xProperty().bind(centerXProperty().subtract(24));
+        image.yProperty().bind(centerYProperty().subtract(24));
+        ((Pane)wallGroup.getParent()).getChildren().add(image);
+    }
+
+    public void setImageInvincible(){
+        image.setImage(new Image(getClass().getResource("/images/sansYellow.png").toExternalForm()));
+    }
+    public void setImageSpeed(){
+        image.setImage(new Image(getClass().getResource("/images/sansBlue.png").toExternalForm()));
+    }
+    public void setImageNormal(){
+        image.setImage(new Image(getClass().getResource("/images/sans.png").toExternalForm()));
+    }
+
+    public boolean isInvincible() {
+        return invincible;
+    }
+
+    public double getSpeed() {
+        return speed;
     }
 }
 

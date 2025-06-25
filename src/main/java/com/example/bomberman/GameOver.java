@@ -23,6 +23,8 @@ public class GameOver implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        SoundManager.playGameOver();
+        SoundManager.getThemePlayer().stop();
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), e->{
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("LevelSelect.fxml"));
@@ -32,6 +34,7 @@ public class GameOver implements Initializable {
                     stage.setScene(scene);
                     stage.show();
                 }
+                SoundManager.playTitleScreenTheme();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

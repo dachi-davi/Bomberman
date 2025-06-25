@@ -15,6 +15,7 @@ public class Enemy1 extends Enemy {
 
     public Enemy1() {
         setRadius(25);
+        setOpacity(0);
     }
 
     public void move() {
@@ -80,14 +81,17 @@ public class Enemy1 extends Enemy {
 
     @Override
     public void enemyKilled() {
-        ScoreManager.addScore(100);
-        if (timeline != null) timeline.stop();
+        if (timeline != null) {
+            timeline.stop();
+            SoundManager.playEnemyDies();
+            ScoreManager.addScore(100);
+        }
         ((Group) getParent()).getChildren().remove(image);
         ((Group) getParent()).getChildren().remove(this);
     }
 
     public void setImage(){
-        image.setImage(new Image(getClass().getResource("/images/enemy1_.png").toExternalForm()));
+        image.setImage(new Image(getClass().getResource("/images/enemy1.png").toExternalForm()));
         image.setFitHeight(54);
         image.setFitWidth(54);
         image.xProperty().bind(centerXProperty().subtract(27));
