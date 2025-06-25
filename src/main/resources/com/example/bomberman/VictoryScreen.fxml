@@ -11,7 +11,6 @@
             fx:controller="com.example.bomberman.VictoryScreen"
             style="-fx-background-color: #f4f4f4;">
    <children>
-      <!-- Victory Label -->
       <Label alignment="CENTER" contentDisplay="CENTER"
              layoutX="59.0" layoutY="56.0" prefHeight="161.0" prefWidth="482.0"
              text="Victory!" style="-fx-text-fill: #2d6a4f;">
@@ -20,7 +19,6 @@
          </font>
       </Label>
 
-      <!-- Score Display -->
       <Label fx:id="scoreLabel" alignment="CENTER"
              layoutX="151.0" layoutY="227.0" prefHeight="62.0" prefWidth="297.0"
              text="Your score was:"
@@ -33,27 +31,3 @@
 </AnchorPane>
 
 
-
-
-
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
-
-<!--<?import javafx.scene.control.Label?>-->
-<!--<?import javafx.scene.layout.AnchorPane?>-->
-<!--<?import javafx.scene.text.Font?>-->
-
-
-<!--<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bomberman.VictoryScreen">-->
-<!--   <children>-->
-<!--      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="59.0" layoutY="56.0" prefHeight="161.0" prefWidth="482.0" text="Victory!">-->
-<!--         <font>-->
-<!--            <Font size="96.0" />-->
-<!--         </font>-->
-<!--      </Label>-->
-<!--      <Label fx:id="scoreLabel" alignment="CENTER" layoutX="151.0" layoutY="227.0" prefHeight="62.0" prefWidth="297.0" text="your score was :  ">-->
-<!--         <font>-->
-<!--            <Font size="20.0" />-->
-<!--         </font>-->
-<!--      </Label>-->
-<!--   </children>-->
-<!--</AnchorPane>-->

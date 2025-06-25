@@ -22,7 +22,7 @@ public class Enemy extends Circle {
     protected ImageView image = new ImageView();
 
     public void setImage(){
-        image.setImage(new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Red_circle.svg/480px-Red_circle.svg.png"));
+        image.setImage(new Image(""));
         image.setFitHeight(50);
         image.setFitWidth(50);
         image.xProperty().bind(centerXProperty().subtract(25));
@@ -186,7 +186,6 @@ public class Enemy extends Circle {
             if (getBoundsInParent().intersects(player.getBoundsInParent())){
                 if (player.getScene()!=null && !player.isInvincible()){
                     stopEnemies();
-                    System.out.println("enemy killed player");
                     playerKilled = true;
                     player.playerKilled();
                 }

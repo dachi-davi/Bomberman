@@ -162,16 +162,6 @@ public class Enemy3Ghost extends Enemy{
         ((Group) getParent()).getChildren().remove(this);
     }
 
-//    public void enemyIntersectsPlayer(){
-//        if (!playerKilled)
-//            if (getBoundsInParent().intersects(player.getBoundsInParent()))
-//                if (player.getScene()!=null){
-//                    playerKilled = true;
-//                    player.playerKilled();
-//                }
-//
-//    }
-
     public void setPlayer(Player player) {
         this.player = player;
     }

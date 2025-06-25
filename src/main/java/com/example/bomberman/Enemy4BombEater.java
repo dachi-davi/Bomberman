@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Enemy4BombEater extends Enemy {
-//    private Timeline timeline;
     private int lastDirection = -1;
     private boolean wasInDanger = false;
     private double speed = 1;

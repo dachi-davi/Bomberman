@@ -4,23 +4,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
-<!--<?import javafx.scene.control.Label?>-->
-<!--<?import javafx.scene.layout.AnchorPane?>-->
-<!--<?import javafx.scene.text.Font?>-->
-<!--<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bomberman.GameOver">-->
-<!--   <children>-->
-<!--      <Label layoutX="133.0" layoutY="150.0" text="Game Over">-->
-<!--         <font>-->
-<!--            <Font size="67.0" />-->
-<!--         </font>-->
-<!--      </Label>-->
-<!--   </children>-->
-<!--</AnchorPane>-->
-
 <AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bomberman.GameOver">
    <children>
-      <!-- Game Over Label -->
       <Label alignment="CENTER" layoutX="90.0" layoutY="150.0" prefHeight="100.0" prefWidth="420.0" style="-fx-text-fill: #d00000;" text="Game Over">
          <font>
             <Font size="64.0" />

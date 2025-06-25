@@ -38,16 +38,6 @@ public class LogIn {
         try {
             Statement statement = HelloApplication.connection.createStatement();
 
-//            statement.execute("create database if not exists BombermanDB");
-//            statement.execute("use BombermanDB");
-//
-//            statement.execute("create table if not exists Users (" +
-//                    "username varchar(30) primary key," +
-//                    "password varchar(30)," +
-//                    "score1 int," +
-//                    "score2 int," +
-//                    "score3 int " +
-//                    ")");
             ResultSet resultSet = statement.executeQuery("select * from Users " +
                     "where username = \"" + username.getText() + "\"");
 

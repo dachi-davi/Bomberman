@@ -1,6 +1,5 @@
 package com.example.bomberman;
 
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Node;

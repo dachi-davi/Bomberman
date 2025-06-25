@@ -97,7 +97,6 @@ public class Bomb extends Circle {
                 }
             }
         while (!bombsToExplode.isEmpty()) {
-//            bombsToExplode.removeLast().explode();
             Bomb tempBomb = bombsToExplode.removeLast();
             tempBomb.countdown.stop();
             tempBomb.explode();
